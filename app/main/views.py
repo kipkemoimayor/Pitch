@@ -23,7 +23,7 @@ def profile(uname):
 new Pitch idea
 '''
 
-@main.route("/pitch/<uname>")
+@main.route("/<uname>")
 @login_required
 def new_pitch(uname):
 
@@ -31,7 +31,7 @@ def new_pitch(uname):
     if user is None:
         abort(404)
 
-    return render_template("new_pitch/pitch.html")
+    return render_template("pitch.html")
 
 
 @main.route("/review/<id>")
