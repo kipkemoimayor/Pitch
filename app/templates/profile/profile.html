@@ -44,8 +44,9 @@
     {%if user==current_user%}
     <form class="form-group" action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
       <input class="form-control" type="file" name="photo" value="" required>
-      <input class="btn btn-info" type="submit" name="" value="Save">
+      <input  id="update" class="btn btn-info" type="submit" name="" value="Save">
     </form>
+    
     {%endif%}
 
   </div>
