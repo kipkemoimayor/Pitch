@@ -21,11 +21,20 @@
   <!--Display profile photo-->
   <div class="col-md-4">
 
-    {% if user.profile_pic_path %}
-    <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
+    {% if user.profile %}
+    <img src="{{url_for('static',filename=user.profile)}}" alt="" class="img-thumbnail">
     {%else%}
     <p>No profile picture</p>
     {% endif %}
+  </div>
+  <div class="col-md-4">
+    {%if user==current_user%}
+    <form class="form-group" action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
+      <input class="form-control" type="file" name="photo" value="" required>
+      <input class="btn btn-info" type="submit" name="" value="Save">
+    </form>
+    {%endif%}
+
   </div>
 </div>
 </div>
