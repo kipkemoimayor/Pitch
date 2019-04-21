@@ -13,3 +13,8 @@ class WritePitch(FlaskForm):
     title=StringField("Title of your Idea",validators=[Required()])
     pitch=TextAreaField("In about 200 words Write your Idea",validators=[Required()])
     submit=SubmitField("Submit")
+
+class ReviewForm(FlaskForm):
+    title=StringField(" Comment title",validators=[Required()])
+    comments=TextAreaField("Comments")
+    submit=SubmitField("Submit")

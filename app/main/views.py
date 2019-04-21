@@ -1,8 +1,8 @@
 from flask import render_template,request,redirect,url_for,abort
-from ..models import User,Pitches
+from ..models import User,Pitches,Comments
 from . import main
-from flask_login import login_required
-from .forms import UpdateProfile,WritePitch
+from flask_login import login_required,current_user
+from .forms import UpdateProfile,WritePitch,ReviewForm
 from .. import db,photos
 
 @main.route("/")
@@ -49,14 +49,26 @@ def new_pitch(uname):
 review
 '''
 
-@main.route("/pitch/new/review/<int:id>")
+@main.route("/pitch/new/review/<int:id>",methods=["GET","POST"])
 @login_required
 def review(id):
     pitch_id=id
     pitch=Pitches.query.all();
     title="Write a comment"
+    form=ReviewForm()
+    if form.validate_on_submit():
+        title=form.title.data
+        comments=form.comments.data
 
-    return render_template("new_review.html",pitch=pitch,id=pitch_id,title=title)
+        #update this variables
+        review=Comments(pitch_id=id,pitch_title=title,comments=comments,user=current_user)
+
+        #save
+        review.save_comment()
+        return redirect(url_for('.review',id=pitch_id))
+
+
+    return render_template("new_review.html",pitch=pitch,id=pitch_id,title=title,comment_form=form)
 
 
 @main.route("/user/<uname>/update",methods=["GET","POST"])
