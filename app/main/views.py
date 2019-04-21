@@ -36,11 +36,18 @@ def new_pitch(uname):
 
     return render_template("pitch.html")
 
+'''
+review
+'''
 
-@main.route("/review/<id>")
+@main.route("/pitch/new/review/<int:id>")
+@login_required
 def review(id):
+    pitch_id=id
+    pitch=Pitches.query.all();
+    title="Write a comment"
 
-    return render_template("/review/review.html")
+    return render_template("new_review.html",pitch=pitch,id=pitch_id,title=title)
 
 
 @main.route("/user/<uname>/update",methods=["GET","POST"])
