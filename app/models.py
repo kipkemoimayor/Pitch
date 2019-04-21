@@ -11,8 +11,8 @@ def load_user(user_id):
 class User(UserMixin,db.Model):
     __tablename__="users"
     id=db.Column(db.Integer,primary_key=True)
-    username=db.Column(db.String(250))
-    email=db.Column(db.String(250))
+    username=db.Column(db.String(250),index=True)
+    email=db.Column(db.String(250),unique=True,index=True)
     pass_secure=db.Column(db.String(255))
 
     @property
@@ -39,6 +39,9 @@ class Pitches(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     pitch=db.Column(db.String(500))
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
+    def __repr__(self):
+        return f'User {self.pitch}'
+
 
 class Role(db.Model):
     __tablename__='roles'
