@@ -16,7 +16,21 @@
             <i>by {{pitch[id-1].author}}</i>
           </div>
 
+
         </div>
+        <h1>Comments</h1>
+        {%for come in all%}
+        <div class="card">
+          <h2>{{come.pitch_title}}</h2>
+          <div class="card-body">
+            {{come.comments}}
+          </div>
+          <p>Posted on{{come.posted}}</p>
+          <p>posted by {{current_user.username}}</p>
+
+        </div>
+
+        {%endfor%}
 
 
       </div>
@@ -30,13 +44,13 @@
 
 
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-12">
-        <h1>Comments</h1>
+
 
       </div>
 
-    </div>
+    </div> -->
 
   </div>
 

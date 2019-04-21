@@ -67,8 +67,12 @@ def review(id):
         review.save_comment()
         return redirect(url_for('.review',id=pitch_id))
 
+    '''
+    query Comments database table
+    '''
+    all_comments=Comments.query.filter_by(pitch_id=id).all()
 
-    return render_template("new_review.html",pitch=pitch,id=pitch_id,title=title,comment_form=form)
+    return render_template("new_review.html",pitch=pitch,id=pitch_id,title=title,comment_form=form,all=all_comments)
 
 
 @main.route("/user/<uname>/update",methods=["GET","POST"])
