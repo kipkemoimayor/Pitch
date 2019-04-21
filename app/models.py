@@ -44,6 +44,7 @@ class Pitches(db.Model):
     pitch=db.Column(db.String(500))
     title=db.Column(db.String(250))
     author=db.Column(db.String(250))
+    categ=db.Column(db.String(250))
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
     def __repr__(self):
         return f'User {self.pitch}'

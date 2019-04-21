@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField,PasswordField,SubmitField,BooleanField,TextAreaField
+from wtforms import StringField,PasswordField,SubmitField,BooleanField,TextAreaField,SelectField
 from wtforms.validators import Required,Email,EqualTo
 from ..models import User
 from wtforms import ValidationError
@@ -11,6 +11,7 @@ class UpdateProfile(FlaskForm):
 
 class WritePitch(FlaskForm):
     title=StringField("Title of your Idea",validators=[Required()])
+    categ=SelectField("Choose Category",choices=[('c','select'),('AI','Artifitial Intelegence'),('R','Robotics'),('D','Drones'),('IOT','IoT')],validators=[Required()])
     pitch=TextAreaField("In about 200 words Write your Idea",validators=[Required()])
     submit=SubmitField("Submit")
 
