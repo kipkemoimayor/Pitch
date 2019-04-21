@@ -11,8 +11,8 @@
     <h3> {{user.username| capitalize}} </h3>
 
     <!--Displaying user bio-->
-    {% if user.bio %}
-      <p> {{user.bio}}</p>
+    {% if user.about %}
+      <p> {{user.about}}</p>
     {%else%}
       <p> {{user.username| capitalize}} has no bio </p>
     {% endif %}

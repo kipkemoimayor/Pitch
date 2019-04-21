@@ -50,9 +50,9 @@ def update_profile(uname):
         abort(404)
     form =UpdateProfile()
     if form.validate_on_submit():
-        user.bio=form.bio.data
+        user.about=form.about.data
         db.session.add(user)
-        fb.session.commit()
+        db.session.commit()
 
         return redirect(url_for(".profile",uname=user.username))
 
