@@ -5,4 +5,5 @@ from flask_login import login_required
 def index():
     title="Pitch"
     message="Home of ideas, Where ideas are born"
+    
     return render_template("index.html",title=title,message=message)
