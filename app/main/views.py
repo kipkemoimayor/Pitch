@@ -9,9 +9,11 @@ from .. import db,photos
 def index():
     title="Pitch"
     message="Home of ideas, Where ideas are born"
-    pitch=Pitches.query.all();
-
-    return render_template("index.html",title=title,message=message,pitch=pitch)
+    top=Pitches.query.all();
+    pitch=Pitches.query.filter_by(categ="AI").all()
+    top.reverse()
+    top_pitch=top[0:4]
+    return render_template("index.html",title=title,message=message,pitch=pitch,top_pitch=top_pitch)
 
 
 @main.route("/user/<uname>")
@@ -20,6 +22,7 @@ def profile(uname):
 
     if user is None:
         abort(404)
+
     pitch=Pitches.query.filter_by(author=uname).all()
     return render_template("profile/profile.html",user=user,pitch=pitch)
 
