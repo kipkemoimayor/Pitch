@@ -45,6 +45,11 @@ class Pitches(db.Model):
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
     def __repr__(self):
         return f'User {self.pitch}'
+        
+'''
+Comments
+'''
+
 
 
 class Role(db.Model):

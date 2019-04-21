@@ -2,7 +2,7 @@ from flask import render_template,request,redirect,url_for,abort
 from ..models import User,Pitches
 from . import main
 from flask_login import login_required
-from .forms import UpdateProfile
+from .forms import UpdateProfile,WritePitch
 from .. import db,photos
 
 @main.route("/")
@@ -26,15 +26,23 @@ def profile(uname):
 new Pitch idea
 '''
 
-@main.route("/<uname>")
+@main.route("/<uname>",methods=["GET","POST"])
 @login_required
 def new_pitch(uname):
-
+    uname=uname
     user=User.query.filter_by(username=uname).first()
     if user is None:
         abort(404)
 
-    return render_template("pitch.html")
+    form=WritePitch()
+    if form.validate_on_submit():
+        new_pitch=Pitches(pitch=form.pitch.data,title=form.title.data,author=uname)
+        db.session.add(new_pitch)
+        db.session.commit()
+        return redirect(url_for(".index"))
+        title="new Pitch"
+
+    return render_template("pitch.html",new_review=form)
 
 '''
 review
