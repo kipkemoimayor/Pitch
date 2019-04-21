@@ -16,6 +16,19 @@
     {%else%}
       <p> {{user.username| capitalize}} has no bio </p>
     {% endif %}
+
+    <h1>My pitch</h1>
+    <p>all your ideas appear here</p>
+    {%for project in pitch%}
+    <div class="card">
+      <h4><strong>Title</strong> {{project.title}}</h4>
+      <div class="card-body">
+        {{project}}
+      </div>
+
+    </div>
+
+    {%endfor%}
   </div>
 
   <!--Display profile photo-->

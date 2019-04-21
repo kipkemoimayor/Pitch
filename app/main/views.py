@@ -20,7 +20,8 @@ def profile(uname):
 
     if user is None:
         abort(404)
-    return render_template("profile/profile.html",user=user)
+    pitch=Pitches.query.filter_by(author=uname).all()
+    return render_template("profile/profile.html",user=user,pitch=pitch)
 
 '''
 new Pitch idea
