@@ -2,6 +2,7 @@ from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
 from . import login_manager
+from datetime import datetime
 
 
 @login_manager.user_loader
@@ -16,6 +17,7 @@ class User(UserMixin,db.Model):
     pass_secure=db.Column(db.String(255))
     about=db.Column(db.String(500))
     profile=db.Column(db.String(250))
+    comments=db.relationship('Comments',backref='user',lazy="dynamic")
 
     @property
     def password(self):
@@ -45,10 +47,28 @@ class Pitches(db.Model):
     role_id=db.Column(db.Integer,db.ForeignKey('roles.id'))
     def __repr__(self):
         return f'User {self.pitch}'
-        
+
 '''
-Comments
+Comments model
 '''
+#establishing a database connection
+class Comments(db.Model):
+    __tablename__='comments'
+    id=id=db.Column(db.Integer,primary_key=True)
+    pitch_id=db.Column(db.Integer)
+    pitch_title=db.Column(db.String)
+    posted=db.Column(db.DateTime,default=datetime.utcnow)
+    user_id=db.Column(db.Integer,db.ForeignKey("users.id"))
+
+    def save_comment(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def get_comments(cls,id):
+        comments=Comments.query.filter_by(pitch_id=id).all()
+        return comments
+
 
 
 
