@@ -1,0 +1,15 @@
+.one{
+  border: 1px solid #676D67;
+  border-width: thin;
+}
+.on{
+  margin: 5px;
+}
+.one:hover{
+  border-color: #79D3F7;
+  box-shadow: 0px 5px 10px #79D3F7;
+  transition: 250ms;
+}
+.container-fluid{
+  margin: 1px;
+}
