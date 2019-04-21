@@ -13,7 +13,7 @@
     <div class="col-md-3">
       <div class="one">
         <div class="on">
-          {{all}}
+          {{all.pitch}}
           <a class="btn btn-secondary" href="/pitch/new/review/{{all.id}}">Leave a comment</a>
         </div>
 
@@ -27,8 +27,22 @@
     <div class="col-md-3">
       <div class="one">
         <div class="on">
-          {{i}}
+          {{i.pitch}}
           <a class="btn btn-secondary" href="/pitch/new/review/{{i.id}}">Leave a comment</a>
+        </div>
+
+      </div>
+
+    </div>
+    {%endfor%}
+  </div>
+  <div class="row">
+    {%for pit in pitch1%}
+    <div class="col-md-3">
+      <div class="one">
+        <div class="on">
+          {{pit.pitch}}
+          <a class="btn btn-secondary" href="/pitch/new/review/{{pit.id}}">Leave a comment</a>
         </div>
 
       </div>
@@ -36,10 +50,40 @@
     </div>
 
     {%endfor%}
-    <div class="col-md-3"></div>
-    <div class="col-md-3"></div>
-    <div class="col-md-3"></div>
+    </div>
 
+    <!--Robotic-->
+<div class="row">
+    {%for i2 in pitch2%}
+    <div class="col-md-3">
+      <div class="one">
+        <div class="on">
+          {{i2.pitch}}
+          <a class="btn btn-secondary" href="/pitch/new/review/{{i2.id}}">Leave a comment</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    {%endfor%}
+    </div>
+
+    <!-- IoT-->
+    <div class="row">
+    {%for i3 in pitch3%}
+    <div class="col-md-3">
+      <div class="one">
+        <div class="on">
+          {{i3.pitch}}
+          <a class="btn btn-secondary" href="/pitch/new/review/{{i3.id}}">Leave a comment</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    {%endfor%}
 
   </div>
 </div>

@@ -11,9 +11,12 @@ def index():
     message="Home of ideas, Where ideas are born"
     top=Pitches.query.all();
     pitch=Pitches.query.filter_by(categ="AI").all()
+    pitch1=Pitches.query.filter_by(categ="R").all()
+    pitch2=Pitches.query.filter_by(categ="D").all()
+    pitch3=Pitches.query.filter_by(categ="IOT").all()
     top.reverse()
     top_pitch=top[0:4]
-    return render_template("index.html",title=title,message=message,pitch=pitch,top_pitch=top_pitch)
+    return render_template("index.html",title=title,message=message,pitch=pitch,top_pitch=top_pitch,pitch1=pitch1,pitch2=pitch2,pitch3=pitch3)
 
 
 @main.route("/user/<uname>")
