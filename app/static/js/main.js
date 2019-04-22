@@ -21,6 +21,8 @@ $(document).ready(function () {
     html:'<a class="btn default-color" href="/authenticate/login">Sign in</a>',
     showConfirmButton:false
   })
+  $(".profile").hide()
+  $("#change").show()
   })
 
   /*business logig*/
@@ -52,6 +54,10 @@ $(document).ready(function () {
     $("#R").hide()
     $("#IoT").hide()
 
+  })
+  $("#change").click(function(){
+    $(".profile").show()
+    $("#change").hide()
   })
 
 
