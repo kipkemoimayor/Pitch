@@ -90,10 +90,13 @@ img{
 .body{
   background-color: #1F3849;
 }
-#pitch{
+.pitch{
   text-align:center;
   text-transform: capitalize;
 }
+/* #pitch{
+  text-transform: capitalize;
+} */
 #spinner{
   display: none;
   margin: auto;
