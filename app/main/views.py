@@ -26,7 +26,8 @@ def profile(uname):
         abort(404)
 
     pitch=Pitches.query.filter_by(author=uname).all()
-    return render_template("profile/profile.html",user=user,pitch=pitch)
+    title=uname
+    return render_template("profile/profile.html",user=user,pitch=pitch,title=title)
 
 '''
 new Pitch idea
