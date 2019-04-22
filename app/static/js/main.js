@@ -23,4 +23,36 @@ $(document).ready(function () {
   })
   })
 
+  /*business logig*/
+
+  $("#aii").click(function(){
+    $("#AI").show()
+    $("#D").hide()
+    $("#R").hide()
+    $("#IoT").hide()
+
+  })
+  $("#robot").click(function(){
+    $("#AI").hide()
+    $("#D").hide()
+    $("#R").show()
+    $("#IoT").hide()
+
+  })
+  $("#ot").click(function(){
+    $("#AI").hide()
+    $("#D").hide()
+    $("#R").hide()
+    $("#IoT").show()
+
+  })
+  $("#dro").click(function(){
+    $("#AI").hide()
+    $("#D").show()
+    $("#R").hide()
+    $("#IoT").hide()
+
+  })
+
+
 })

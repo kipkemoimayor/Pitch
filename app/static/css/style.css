@@ -46,3 +46,22 @@ span{
 h1{
   text-align: center;
 }
+.ai{
+  background-image: url(../img/idea.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: darken;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 400;
+  background-color: rgba(0,0,0,0.3) !important;
+}
+.cat{
+  height: 250px;
+}
+
+#R,#IoT,#D{
+  display: none;
+}

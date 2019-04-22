@@ -34,11 +34,30 @@
 
   </div>
   <!-- Category Ai starts here-->
-  <div class="jumbotron">
-      <h1>Artificial intelligence (AI) Category</h1>
+  <div class="ai jumbotron">
+    <div class="row">
+      <div class="col-md-3"><div class="cat card">
+        <h1>Artificial intelligence (AI) Category</h1><br><br> <button id="aii" class="btn default-color" type="button" name="button">View Category</button></div>
+      </div>
+      <div class="col-md-3"> <div class="cat card">
+        <h1>Robotics  (R) Category</h1><br><br><br><br><button id="robot" class="btn default-color" type="button" name="button">View Category</button></div>
+      </div>
+      <div class="col-md-3"><div class="cat card">
+        <h1>Internet of Everything  (IoT) Category</h1><br><br><button id="ot" class="btn default-color" type="button" name="button">View Category</button>
+      </div></div>
+      <div class="col-md-3"><div class="cat card">
+        <h1>Drones  (D) Category</h1><br><br><br><br><button id="dro" class="btn default-color" type="button" name="button">View Category</button>
+      </div></div>
+
+    </div>
   </div>
 
-  <div class="row">
+
+  <div id="AI" class="animated fadeIn row">
+    <div class="col-md-12">
+      <h1>Artificial intelligence (AI) Category</h1>
+
+    </div>
     {%for i in pitch%}
     <div class="col-md-3">
       <div class="one">
@@ -53,10 +72,12 @@
     </div>
     {%endfor%}
   </div>
-  <div class="jumbotron">
+  <div id="R" class="animated fadeIn row">
+    <div class="col-md-12">
       <h1>Robotics  (R) Category</h1>
-  </div>
-  <div class="row">
+
+    </div>
+
     {%for pit in pitch1%}
     <div class="col-md-3">
       <div class="one">
@@ -74,11 +95,13 @@
     </div>
 
     <!--Robotic-->
-    <div class="jumbotron">
-      <h1>Drones  (D) Category</h1>
-    </div>
 
-<div class="row">
+
+<div id="D" class="animated fadeIn row">
+  <div class="col-md-12">
+    <h1>Drones  (D) Category</h1>
+
+  </div>
     {%for i2 in pitch2%}
     <div class="col-md-3">
       <div class="one">
@@ -94,11 +117,12 @@
 
     {%endfor%}
     </div>
-    <div class="jumbotron">
-      <h1>Internet of Everything  (IoT) Category</h1>
-    </div>
+
     <!-- IoT-->
-    <div class="row">
+    <div id="IoT" class="animated fadeIn row">
+      <div class="col-md-12">
+        <h1>Internet of Everything  (IoT) Category</h1>
+      </div>
     {%for i3 in pitch3%}
     <div class="col-md-3">
       <div class="one">
