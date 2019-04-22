@@ -7,7 +7,7 @@ class UserModelTest(unittest.TestCase):
         self.new_user=User(password="crazy")
 
     def test_password_setter(self):
-        seld.assertTrue(self.new_user.pass_secure is not None)
+        self.assertTrue(self.new_user.pass_secure is not None)
 
     def test_no_access_password(self):
         with self.assertRaises(AttributeError):
