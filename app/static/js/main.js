@@ -8,15 +8,15 @@ $(document).ready(function () {
     showConfirmButton:false
   })
   })
-  $("#submit").click(function () {
-    Swal.fire({
-    type: 'success',
-    title: 'Success',
-    timer:2000,
-    showConfirmButton:false
-  })
-
-  })
+  // $("#submit").click(function () {
+  //   Swal.fire({
+  //   type: 'success',
+  //   title: 'Success',
+  //   timer:2000,
+  //   showConfirmButton:false
+  // })
+  //
+  // })
 
   $(".title").mouseover(function(){
     $("span").show()

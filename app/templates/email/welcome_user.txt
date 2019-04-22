@@ -1,3 +1,4 @@
 Hello {{user.username}}
+We are excited That your are here
 Welcome to Pitch Where Ideas are born
 Thank you for signing up for Pitch, Its the first step of building something great for the future, Innovation and mind blowing Ideas
