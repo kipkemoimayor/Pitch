@@ -59,6 +59,23 @@ $(document).ready(function () {
     $(".profile").show()
     $("#change").hide()
   })
+  like=0;
+
+  function likes(){
+    like++
+  }
+  dislikes=0;
+  function dislike(){
+    dislikes--
+  }
+  $("#like").click(function(){
+    likes()
+    $("#p").text(like)
+  })
+  $("#dislike").click(function(){
+    dislike()
+    $("#p1").text(dislikes)
+  })
 
 
 })
