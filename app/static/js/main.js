@@ -77,5 +77,34 @@ $(document).ready(function () {
     $("#p1").text(dislikes)
   })
 
+  $("#love").click(function(){
+    $("#spinner").show();
+    totalScore=0
+    var startCount=60;
+    function beginLoop() {
+      setTimeout(function(){
+        startCount--;
+
+        if(startCount>=totalScore){
+          if(startCount==0){
+            $("#spinner").hide();
+            $("#sho").text(60)
+          }
+          $("#sho").text(startCount)
+
+          beginLoop();
+        }
+
+      }, 800)
+
+    }
+    beginLoop();
+
+  })
+
+
+  ///
+
+
 
 })

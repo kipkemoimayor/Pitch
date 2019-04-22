@@ -94,3 +94,12 @@ img{
   text-align:center;
   text-transform: capitalize;
 }
+#spinner{
+  display: none;
+  margin: auto;
+  width: 20%;
+
+}
+#sho{
+  color:#16215B;
+}
