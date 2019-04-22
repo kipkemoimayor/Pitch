@@ -1,4 +1,4 @@
-from flask import render_template,request,redirect,url_for,abort
+from flask import render_template,request,redirect,url_for,abort,flash
 from ..models import User,Pitches,Comments
 from . import main
 from flask_login import login_required,current_user
@@ -48,6 +48,7 @@ def new_pitch(uname):
         db.session.commit()
         return redirect(url_for(".index"))
         title="new Pitch"
+
 
     return render_template("pitch.html",new_review=form)
 
@@ -110,3 +111,14 @@ def update_pic(uname):
         user.profile= path
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
+
+'''
+up down vote
+'''
+
+def upVote():
+    vote=0;
+
+
+def downVote():
+    pass

@@ -13,3 +13,19 @@
 .container-fluid{
   margin: 1px;
 }
+.title{
+  background-color: #727C82  !important;
+  color: white;
+}
+.title:hover{
+  background-color: #305872 !important;
+  transition: 300ms;
+}
+span{
+  display: none;
+  color: white;
+}
+.vom{
+
+  color: #846;
+}

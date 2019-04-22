@@ -9,4 +9,9 @@ $(document).ready(function () {
   })
   })
 
+  $(".title").mouseover(function(){
+    $("span").show()
+
+  })
+
 })
