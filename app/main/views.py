@@ -4,7 +4,6 @@ from . import main
 from flask_login import login_required,current_user
 from .forms import UpdateProfile,WritePitch,ReviewForm
 from .. import db,photos
-
 @main.route("/")
 def index():
     title="Pitch"
