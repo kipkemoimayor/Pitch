@@ -81,3 +81,16 @@ img{
 .profile{
   display: none;
 }
+#like,#dislike{
+  float: right;
+}
+.gnome{
+  color:#997;
+}
+.body{
+  background-color: #1F3849;
+}
+#pitch{
+  text-align:center;
+  text-transform: capitalize;
+}

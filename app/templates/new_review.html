@@ -1,60 +1,87 @@
 {%extends 'base.html'%}
 {%import "bootstrap/wtf.html" as wtf%}
 {%block content%}
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="">
-        <div class="card">
-          <h5>This Project was Pitched  by {{pitch[id-1].author}}</h5>
-            <h3>Title {{pitch[id-1].title}}</h3>
-          <div class="card-body">
-            {{pitch[id-1]}}
-            <br>
-            <hr class="default-color">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body class="body">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="">
+            <div class="card">
+              <h5>This Project was Pitched  by {{pitch[id-1].author}}</h5>
+                <h3 class="gnome">Title {{pitch[id-1].title}}</h3>
+              <div class="card-body">
+                {{pitch[id-1].pitch}}
+                <br>
+                <hr class="default-color">
 
-            <i>by {{pitch[id-1].author}}</i>
-            <button id="like" class="btn btn-success" type="button" name="button"><i class="fas fa-thumbs-up"></i> <p id="p">0</p></button>
-            <button id="dislike" class="btn btn-danger" type="button" name="button"><i class="fas fa-thumbs-down"></i><p id="p1">0</p> </button>
+                <i>by {{pitch[id-1].author}}</i>
+                <button id="like" class="btn btn-success" type="button" name="button"><i class="fas fa-thumbs-up"></i> <p id="p">0</p></button>
+                <button id="dislike" class="btn btn-danger" type="button" name="button"><i class="fas fa-thumbs-down"></i><p id="p1">0</p> </button>
+              </div>
+
+
+            </div>
+            {%if all%}
+            <div class="card">
+              <div class="card-body">
+                  <h2>Comments.....</h2>
+              </div>
+
+            </div>
+
+            {%for come in all%}
+            <div class="card">
+              <h5>{{come.pitch_title}}</h5>
+              <div class="card-body">
+               <i class="fas fa-quote-left"> {{come.comments}}</i>
+              </div>
+              <p>Posted on {{come.posted}}</p>
+              <p>posted by {{pitch[id-1].author}}</p>
+
+            </div>
+
+            {%endfor%}
+            {%else%}
+            <h1 class="animated fadeIn"></h1>
+            <div class="card">
+              <div class="card-body">
+                <h2>No comments yet for this Pitch</h2>
+              </div>
+
+            </div>
+
+            {%endif%}
+
+
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div class="jumbotron">
+            <h1>Leave a comment</h1>
+            {{wtf.quick_form(comment_form)}}
           </div>
 
 
         </div>
-        <h2>Comments</h2>
-        {%for come in all%}
-        <div class="card">
-          <h2>{{come.pitch_title}}</h2>
-          <div class="card-body">
-            {{come.comments}}
+        <!-- <div class="row">
+          <div class="col-md-12">
+
+
           </div>
-          <p>Posted on{{come.posted}}</p>
-          <p>posted by {{pitch[id-1].author}}</p>
 
-        </div>
-
-        {%endfor%}
-
+        </div> -->
 
       </div>
 
     </div>
-    <div class="col-md-6">
-      <div class="jumbotron">
-        <h1>Leave a comment</h1>
-        {{wtf.quick_form(comment_form)}}
-      </div>
-
-
-    </div>
-    <!-- <div class="row">
-      <div class="col-md-12">
-
-
-      </div>
-
-    </div> -->
-
-  </div>
-
-</div>
-{%endblock%}
+    {%endblock%}
+  </body>
+</html>
+<div class="body">
