@@ -13,5 +13,14 @@ $(document).ready(function () {
     $("span").show()
 
   })
+  $("#login").click(function(){
+    Swal.fire({
+    type: 'warning',
+    title: 'Login Required',
+    text: 'Please Login to Post your Idea',
+    html:'<a class="btn default-color" href="/authenticate/login">Sign in</a>',
+    showConfirmButton:false
+  })
+  })
 
 })

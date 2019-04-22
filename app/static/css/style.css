@@ -29,3 +29,20 @@ span{
 
   color: #846;
 }
+.main{
+  background-image: url(../img/idea.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: darken;
+  height: 53vh;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  font-weight: 400;
+  background-color: rgba(0,0,0,0.3) !important;
+}
+h1{
+  text-align: center;
+}

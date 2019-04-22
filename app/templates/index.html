@@ -2,12 +2,16 @@
 
 
 {%block content%}
-
+<div class=" main jumbotron">
+  <h1>Welcome to Pitch</h1>
+  <h4>{{message}}</h4>
+  {%if current_user.is_authenticated%}
+  <p>Get started Write your own Idea </p><a href="{{url_for('main.new_pitch',uname=current_user.username)}}"><button class="btn default-color" type="button" name="button">Here</button></a>
+  {%else%}
+  <p>Get started Write your own Idea </p><a><button class="btn default-color" id="login" type="button" title="Login Required To post your Idea" name="button">Here</button></a>
+  {%endif%}
+</div>
 <div class="container-fluid">
-  <div class="jumbotron">
-    <h1>Welcome to Pitch</h1>
-    <h4>{{message}}</h4>
-  </div>
   <div class="row">
     {%for all in top_pitch%}
     <div class="col-md-3">
@@ -29,6 +33,11 @@
     {%endfor%}
 
   </div>
+  <!-- Category Ai starts here-->
+  <div class="jumbotron">
+      <h1>Artificial intelligence (AI) Category</h1>
+  </div>
+
   <div class="row">
     {%for i in pitch%}
     <div class="col-md-3">
@@ -43,6 +52,9 @@
 
     </div>
     {%endfor%}
+  </div>
+  <div class="jumbotron">
+      <h1>Robotics  (R) Category</h1>
   </div>
   <div class="row">
     {%for pit in pitch1%}
@@ -62,6 +74,10 @@
     </div>
 
     <!--Robotic-->
+    <div class="jumbotron">
+      <h1>Drones  (D) Category</h1>
+    </div>
+
 <div class="row">
     {%for i2 in pitch2%}
     <div class="col-md-3">
@@ -78,7 +94,9 @@
 
     {%endfor%}
     </div>
-
+    <div class="jumbotron">
+      <h1>Internet of Everything  (IoT) Category</h1>
+    </div>
     <!-- IoT-->
     <div class="row">
     {%for i3 in pitch3%}
