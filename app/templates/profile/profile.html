@@ -4,7 +4,7 @@
 <div class="container-fluid">
 <div class="row">
 <!-- displaying  Username-->
-  <div class="col-md-5">
+  <div class="col-md-4">
     <!-- Card -->
 <div id="bg"  class="card testimonial-card">
 
@@ -38,7 +38,7 @@
     {% endif %}
 
   </div>
-  <button id="change" class="btn btn-secondary" type="button" name="button">Change Profile</button>
+  <button id="change" class="btn btn-secondary animated fadeIn" type="button" name="button">Change Profile</button>
 <div class="profile animated fadeIn">
   {%if user==current_user%}
   <form class="form-group" action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype="multipart/form-data">
@@ -58,20 +58,45 @@
   </div>
 
   <!--Display profile photo-->
-  <div class="col-md-6">
+  <div class="col-md-8">
+    <h1>My pitch Ideas</h1>
+    <div class="row">
+        {%for project in pitch%}
+      <div class="col-md-6">
 
-    <h1>My pitch</h1>
-    <p>all your ideas appear here</p>
-    {%for project in pitch%}
-    <div class="card">
-      <h4><strong>Title</strong> {{project.title}}</h4>
-      <div class="card-body">
-        {{project}}
+        <div class="one">
+          <div class="on">
+            <div  class="jumbotron title">
+              <h5>{{project.title}}</h5>
+            </div>
+            {{project.pitch}}
+            <br>
+            <i class="vom">Cetegory {{project.categ}}</i>
+            <br>
+            <hr class="default-color">
+            <a class="btn default-color" href="/pitch/new/review/{{project.id}}">comment</a>
+          </div>
+
+        </div>
+
+
+
+
+        <!-- <div class="card">
+          <h4><strong>Title</strong> {{project.title}}</h4>
+          <div class="card-body">
+            {{project}}
+          </div>
+
+        </div> -->
+
+
       </div>
+        {%endfor%}
+
 
     </div>
 
-    {%endfor%}
 
   </div>
 </div>
