@@ -16,7 +16,7 @@
     {% if user.profile %}
     <img src="{{url_for('static',filename=user.profile)}}" alt="profile avatar" class="img-responsive rounded-circle">
     {%else%}
-    <p>No profile picture</p>
+    <img src="/static/img/def.svg" alt="profile avatar" class="img-responsive rounded-circle">
     {% endif %}
   </div>
 

@@ -47,10 +47,10 @@ def new_pitch(uname):
         db.session.add(new_pitch)
         db.session.commit()
         return redirect(url_for(".index"))
-        title="new Pitch"
 
 
-    return render_template("pitch.html",new_review=form)
+    title="new Pitch"
+    return render_template("pitch.html",new_review=form,title=title)
 
 '''
 review
