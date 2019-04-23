@@ -65,11 +65,21 @@ h1{
 #R,#IoT,#D{
   display: none;
 }
+/* @media screen and  (man-width:350px) {
+  img{
+
+    max-width: 100%;
+    display:block;
+    height: auto;
+  }
+} */
 img{
 
+  max-width: 100%;
+  display:block;
   height: 400px;
-  width:400px;
 }
+
 #bg{
   background-image: url(../img/idea.jpg);
   background-position: bottom;

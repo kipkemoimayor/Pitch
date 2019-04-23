@@ -81,24 +81,29 @@
       <h1>Robotics  (R) Category</h1>
 
     </div>
+    <div class="container-fluid">
+      <div class="row">
+        {%for pit in pitch1%}
+        <div class="col-md-3">
+          <div class="one">
+            <div class="on">
+              <div  class="jumbotron title">
+                <h5>{{pit.title}}</h5>
+              </div>
+              {{pit.pitch}}
+              <hr class="default-color">
+              <a class="btn btn-secondary" href="/pitch/new/review/{{pit.id}}">comment</a>
+            </div>
 
-    {%for pit in pitch1%}
-    <div class="col-md-3">
-      <div class="one">
-        <div class="on">
-          <div  class="jumbotron title">
-            <h5>{{pit.title}}</h5>
           </div>
-          {{pit.pitch}}
-          <hr class="default-color">
-          <a class="btn btn-secondary" href="/pitch/new/review/{{pit.id}}">comment</a>
+
         </div>
 
+        {%endfor%}
       </div>
-
     </div>
 
-    {%endfor%}
+
     </div>
 
     <!--Robotic-->
@@ -109,23 +114,29 @@
     <h1>Drones  (D) Category</h1>
 
   </div>
-    {%for i2 in pitch2%}
-    <div class="col-md-3">
-      <div class="one">
-        <div class="on">
-          <div  class="jumbotron title">
-            <h5>{{i2.title}}</h5>
+  <div class="container-fluid">
+    <div class="row">
+      {%for i2 in pitch2%}
+      <div class="col-md-3">
+        <div class="one">
+          <div class="on">
+            <div  class="jumbotron title">
+              <h5>{{i2.title}}</h5>
+            </div>
+            {{i2.pitch}}
+            <hr class="default-color">
+            <a class="btn btn-secondary" href="/pitch/new/review/{{i2.id}}">comment</a>
           </div>
-          {{i2.pitch}}
-          <hr class="default-color">
-          <a class="btn btn-secondary" href="/pitch/new/review/{{i2.id}}">comment</a>
+
         </div>
 
       </div>
 
+      {%endfor%}
     </div>
 
-    {%endfor%}
+  </div>
+
     </div>
 
     <!-- IoT-->
@@ -133,26 +144,41 @@
       <div class="col-md-12">
         <h1>Internet of Everything  (IoT) Category</h1>
       </div>
-    {%for i3 in pitch3%}
-    <div class="col-md-3">
-      <div class="one">
-        <div class="on">
-          <div  class="jumbotron title">
-            <h5>{{i3.title}}</h5>
-          </div>
-          {{i3.pitch}}
-          <hr class="default-color">
-          <a class="btn btn-secondary" href="/pitch/new/review/{{i3.id}}">comment</a>
-        </div>
+      <div class="container-fluid">
+        <div class="row">
+          {%for i3 in pitch3%}
+          <div class="col-md-3">
+            <div class="one">
+              <div class="on">
+                <div  class="jumbotron title">
+                  <h5>{{i3.title}}</h5>
+                </div>
+                {{i3.pitch}}
+                <hr class="default-color">
+                <a class="btn btn-secondary" href="/pitch/new/review/{{i3.id}}">comment</a>
+              </div>
 
+            </div>
+
+          </div>
+
+          {%endfor%}
+        </div>
       </div>
 
-    </div>
-
-    {%endfor%}
-
   </div>
+
 </div>
+<footer class="page-footer font-small bg-default pt-4">
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">© 2019 Copyright:
+        <a href="https://github.com/kipkemoimayor"> Collins kipkemoi</a>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+
 
 
 {%endblock%}
